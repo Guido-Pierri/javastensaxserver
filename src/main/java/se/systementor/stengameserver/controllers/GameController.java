@@ -38,6 +38,7 @@ public class GameController {
         gameResult.setWinner(winner);
         gameResult.setYourSelection(yourSelection);
         gameResult.setComputerSelection(mySelection);
+        gameResult.setCoolnessFactor(99);
 
         statisticsService.save(winner,yourSelection,mySelection);
 
