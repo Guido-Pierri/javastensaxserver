@@ -11,7 +11,7 @@ import se.systementor.stengameserver.services.StatisticsService;
 import java.util.Objects;
 import java.util.Random;
 
-// ex http://localhost:5000/api/play?y
+// ex http://localhost:5000/api/play?yourSelection=STONE
 //SCISSOR
 // BAG
 @RestController
@@ -31,8 +31,8 @@ public class GameController {
         if(yourSelection.equals("SCISSOR") && mySelection.equals("BAG")) winner = "You";
         if(yourSelection.equals("BAG") && mySelection.equals("STONE"))winner = "You";
         if(mySelection.equals("STONE") && yourSelection.equals("SCISSOR"))winner = "Computer";
-        if(mySelection.equals("STONE") && yourSelection.equals("SCISSOR"))winner = "Computer";
-        if(mySelection.equals("STONE") && yourSelection.equals("SCISSOR"))winner = "Computer";
+        if(mySelection.equals("SCISSOR") && yourSelection.equals("BAG"))winner = "Computer";
+        if(mySelection.equals("BAG") && yourSelection.equals("STONE"))winner = "Computer";
 
         var gameResult = new GameResult();
         gameResult.setWinner(winner);
