@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import se.systementor.stengameserver.DTO.GameResult;
 import se.systementor.stengameserver.services.StatisticsService;
 
+import java.util.Objects;
 import java.util.Random;
 
-// ex http://localhost:8080/api/play?yourSelection=STONE
-
+// ex http://localhost:5000/api/play?y
+//SCISSOR
+// BAG
 @RestController
 @CrossOrigin
 public class GameController {
@@ -25,12 +27,12 @@ public class GameController {
     public GameResult play(@RequestParam String yourSelection){
         String winner = "Tie";
         String mySelection = randomizeSelection();
-        if(yourSelection == "STONE" && mySelection == "SCISSOR")winner = "You";
-        if(yourSelection == "SCISSOR" && mySelection == "BAG")winner = "You";
-        if(yourSelection == "BAG" && mySelection == "STONE")winner = "You";
-        if(mySelection == "STONE" && yourSelection == "SCISSOR")winner = "Computer";
-        if(mySelection == "STONE" && yourSelection == "SCISSOR")winner = "Computer";
-        if(mySelection == "STONE" && yourSelection == "SCISSOR")winner = "Computer";
+        if(yourSelection.equals("STONE") && mySelection.equals("SCISSOR"))winner = "You";
+        if(yourSelection.equals("SCISSOR") && mySelection.equals("BAG")) winner = "You";
+        if(yourSelection.equals("BAG") && mySelection.equals("STONE"))winner = "You";
+        if(mySelection.equals("STONE") && yourSelection.equals("SCISSOR"))winner = "Computer";
+        if(mySelection.equals("STONE") && yourSelection.equals("SCISSOR"))winner = "Computer";
+        if(mySelection.equals("STONE") && yourSelection.equals("SCISSOR"))winner = "Computer";
 
         var gameResult = new GameResult();
         gameResult.setWinner(winner);
