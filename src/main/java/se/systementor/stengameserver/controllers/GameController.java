@@ -1,6 +1,7 @@
 package se.systementor.stengameserver.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import java.util.Random;
 // ex http://localhost:8080/api/play?yourSelection=STONE
 
 @RestController
+@CrossOrigin
 public class GameController {
 
 
