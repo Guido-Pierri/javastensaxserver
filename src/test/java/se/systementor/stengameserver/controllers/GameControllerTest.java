@@ -1,6 +1,7 @@
 package se.systementor.stengameserver.controllers;
 
 import jakarta.inject.Inject;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,6 +20,7 @@ class GameControllerTest {
 
 
     @Test
+    @DisplayName("user is winner")
     void whenYourSelectionEqualsScissorAndMyselectionEqualsBag_thenWinnerIsYou() {
 
         //given
