@@ -27,4 +27,22 @@ StatisticsService {
         //game.setId(games.size()+1);
         gameRepository.save(game);
     }
+
+    public String getStatistics() {
+var sb = new StringBuilder();
+        sb.append("<table>");
+        sb.append("<tr><th>Id</th><th>Winner</th><th>Your selection</th><th>My selection</th><th>Created</th></tr>");
+        for(var game : gameRepository.findAll()){
+            sb.append("<tr>");
+            sb.append("<td>").append(game.getId()).append("</td>");
+            sb.append("<td>").append(game.getWinner()).append("</td>");
+            sb.append("<td>").append(game.getYourSelection()).append("</td>");
+            sb.append("<td>").append(game.getMySelection()).append("</td>");
+            sb.append("<td>").append(game.getCreated()).append("</td>");
+            sb.append("</tr>");
+        }
+        sb.append("</table>");
+        return sb.toString();
+
+    }
 }

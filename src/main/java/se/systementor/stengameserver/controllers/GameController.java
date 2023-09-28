@@ -51,4 +51,9 @@ public class GameController {
         if(index == 1) return "SCISSOR";
         return "BAG";
     }
+    @GetMapping("/api/statistics")
+    public String statistics(){
+        return statisticsService.getStatistics();
+    }
+
 }
