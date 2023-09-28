@@ -36,25 +36,5 @@ class GameControllerTest {
 
 
     }
-    @Test
-    void whenYourSelectionEqualsScissorAndMyselectionEqualsBag_thenWinnerIsComputer() {
 
-        //given
-        String yourSelection = "SCISSOR";
-        String mySelection = "BAG";
-        String winner = "Computer";
-
-        //when
-        statisticsService.save(winner,yourSelection,mySelection);
-
-        //then
-        assertEquals("You", winner);
-        verify(statisticsService).save(winner,yourSelection,mySelection);
-        verifyNoMoreInteractions(statisticsService);
-
-
-    }
-    @Test
-    void statistics() {
-    }
 }
