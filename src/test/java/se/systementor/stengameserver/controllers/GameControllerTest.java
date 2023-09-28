@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import se.systementor.stengameserver.services.StatisticsService;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,7 +18,6 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 class GameControllerTest {
     @Mock
     private StatisticsService statisticsService;
-
 
     @Test
     @DisplayName("user is winner")
